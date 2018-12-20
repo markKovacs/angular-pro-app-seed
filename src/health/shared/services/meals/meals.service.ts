@@ -7,6 +7,8 @@ import 'rxjs/add/operator/do';
 
 import { AuthService } from '../../../../auth/shared/services/auth/auth.service';
 
+import { AngularFireDatabase } from 'angularfire2/database';
+
 export interface Meal {
   name: string,
   ingredients: string[],
@@ -18,7 +20,7 @@ export interface Meal {
 @Injectable()
 export class MealsService {
 
-  meals$: Observable<Meal[]> = this.db.list(`meals/${this.uid}`)
+  meals$: Observable<Meal[]> = (this.db.list(`meals/${this.uid}`) as Observable<Meal[]>)
     .do(next => this.store.set('meals', next));
 
   constructor(
