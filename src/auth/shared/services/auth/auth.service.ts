@@ -5,7 +5,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import 'rxjs/add/operator/do';
 
 import { Store } from 'store';
-import { NotExpr } from '@angular/compiler';
 
 export interface User {
   email: string,

@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/shared/guards/auth.guard';
 
 export const ROUTES: Routes = [
-  { path: 'schedule', canActivate: [AuthGuard], loadChildren: './schedule/schedule.module#ScheduleModule' },
-  { path: 'meals', canActivate: [AuthGuard], loadChildren: './meals/meals.module#MealsModule' },
-  { path: 'workouts', canActivate: [AuthGuard], loadChildren: './workouts/workouts.module#WorkoutsModule' }
+  { path: 'schedule', canLoad: [AuthGuard], loadChildren: './schedule/schedule.module#ScheduleModule' },
+  { path: 'meals', canLoad: [AuthGuard], loadChildren: './meals/meals.module#MealsModule' },
+  { path: 'workouts', canLoad: [AuthGuard], loadChildren: './workouts/workouts.module#WorkoutsModule' }
 ];
 
 @NgModule({
