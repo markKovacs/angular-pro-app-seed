@@ -8,14 +8,22 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 // services
 import { MealsService } from './services/meals/meals.service';
 
+// components
+import { ListItemComponent } from './components/list-item.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ListItemComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     AngularFireDatabaseModule
   ],
+  exports: [
+    ListItemComponent
+  ]
 })
 export class SharedModule {
 
